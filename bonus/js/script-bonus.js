@@ -5,6 +5,8 @@ $(document).ready(function(){
 
   var bottoneSuccessivo = $(".successivo");
 
+  var pallinoNav = $(".nav > i");
+
   bottonePrecedente.click(function(){
 
     cambiaImgPrecedente();
@@ -25,6 +27,22 @@ $(document).ready(function(){
     } else if (tasto == 39 || tasto1 == 37) {
       cambiaImgSuccessiva();
     }
+  });
+
+  pallinoNav.click(function(){
+
+    pallinoNav.removeClass("visibile");
+
+    $(this).addClass("visibile");
+
+    var pallinoNavCorrente = $(this).index();
+
+    console.log(pallinoNavCorrente);
+
+    $("img.visibile").removeClass("visibile");
+
+    $("img").eq(pallinoNavCorrente).addClass("visibile");
+
   });
 
 
